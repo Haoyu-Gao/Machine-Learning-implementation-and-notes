@@ -17,8 +17,8 @@ def main(train_path, eval_path, pred_path):
 
     x_eval, y_eval = util.load_dataset(eval_path, add_intercept=True)
     y_prediction = logistic_regression_model.predict(x_eval)
-    util.plot(x_eval, y_eval, logistic_regression_model.theta.reshape(3, ), "data/ds1_val_pred")
-    util.plot(x_train, y_train, logistic_regression_model.theta.reshape(3, ), "data/ds1_train_pred")
+    util.plot(x_eval, y_eval, logistic_regression_model.theta.reshape(3, ), "data/ds2_val_pred_lr")
+    util.plot(x_train, y_train, logistic_regression_model.theta.reshape(3, ), "data/ds2_train_pred_lr")
     # np.savetxt(pred_path, y_prediction)
 
     # print the error rate
@@ -82,6 +82,6 @@ class LogisticRegression(LinearModel):
 
 # do a little test
 if __name__ == "__main__":
-    main("data/ds1_train.csv", "data/ds1_valid.csv", "data/ds1_output.csv")
+    main("data/ds2_train.csv", "data/ds2_valid.csv", "data/ds2_output_lr.csv")
 
 
